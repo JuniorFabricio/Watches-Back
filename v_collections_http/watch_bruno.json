@@ -1,0 +1,113 @@
+{
+  "name": "watch",
+  "version": "1",
+  "items": [
+    {
+      "type": "http",
+      "name": "Get watch",
+      "seq": 2,
+      "request": {
+        "url": "http://127.0.0.1:8000/api/watch/1",
+        "method": "GET",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "Delete watch",
+      "seq": 3,
+      "request": {
+        "url": "http://127.0.0.1:8000/api/watch/2",
+        "method": "DELETE",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "Create watch",
+      "seq": 4,
+      "request": {
+        "url": "http://127.0.0.1:8000/api/watch",
+        "method": "POST",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n    \"model\": \"watch33\",\n    \"brand\": \"casio\",\n    \"ean\": \"193456789\",\n    \"type_id\": \"3\",\n    \"strap_id\": \"1\",\n    \"year_edition\": \"2020\",\n    \"price\": 29.99\n}",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "Get watches",
+      "seq": 5,
+      "request": {
+        "url": "http://127.0.0.1:8000/api/watches",
+        "method": "GET",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "docs": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    }
+  ],
+  "environments": [],
+  "brunoConfig": {
+    "version": "1",
+    "name": "watch",
+    "type": "collection",
+    "ignore": [
+      "node_modules",
+      ".git"
+    ]
+  }
+}

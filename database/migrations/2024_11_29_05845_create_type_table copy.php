@@ -1,6 +1,5 @@
 <?php
 
-use App\Enums\StoreType;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -12,11 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('stores', function (Blueprint $table) {
+        Schema::create('Types', function (Blueprint $table) {
             $table->id();
-            $table->string('dir');
-            $table->enum('type', StoreType::values());
-            $table->boolean('sale');
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -26,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('store');
+        Schema::dropIfExists('straps');
     }
 };

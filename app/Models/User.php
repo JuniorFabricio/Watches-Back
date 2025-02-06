@@ -10,7 +10,6 @@ use Tymon\JWTAuth\Contracts\JWTSubject;
 
 class User extends Authenticatable implements JWTSubject
 {
-    /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
 
     /**
@@ -47,7 +46,6 @@ class User extends Authenticatable implements JWTSubject
         ];
     }
 
-
     public function getJWTIdentifier()
     {
         return $this->getKey();
@@ -57,5 +55,4 @@ class User extends Authenticatable implements JWTSubject
     {
         return [];
     }
-
 }

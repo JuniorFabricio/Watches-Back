@@ -11,11 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('stocks', function (Blueprint $table) {
+        Schema::create('watches', function (Blueprint $table) {
             $table->id();
-            $table->integer('amount');
-            $table->foreignId('book_id')->constrained();
-            $table->foreignId('store_id')->constrained();
+            $table->string('model');
+            $table->string('brand');
+            $table->string('ean');
+            $table->foreignId('type_id')->constrained('types');
+            $table->foreignId('strap_id')->constrained('straps');
+            $table->year('year_edition');
+            $table->float('price');
             $table->timestamps();
         });
     }
@@ -25,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('stocks');
+        Schema::dropIfExists('watches');
     }
 };

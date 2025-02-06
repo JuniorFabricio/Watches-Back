@@ -1,11 +1,12 @@
 <?php
 
-use App\Exceptions\BookNotFoundException;
+use App\Exceptions\WatchNotFoundException;
 use App\Helpers\ApiResponse;
 use App\Http\Middleware\JwtMiddleware;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
+use Illuminate\Http\Request;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -15,10 +16,10 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-       // $middleware->append(JwtMiddleware::class);
+        $middleware->append(JwtMiddleware::class);
     })
     ->withExceptions(function (Exceptions $exceptions) {
-        $exceptions->render(function (BookNotFoundException $exception){
-            return ApiResponse::error($exception->getMessage(),$exception->getMessage(), $exception->getCode());
+        $exceptions->render(function (WatchNotFoundException $exception) {
+            return ApiResponse::error('',$exception->getMessage(), $exception->getCode());
         });
     })->create();

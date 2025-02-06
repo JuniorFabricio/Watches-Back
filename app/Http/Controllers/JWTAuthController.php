@@ -56,7 +56,7 @@ class JWTAuthController extends Controller
             return response()->json(['error' => 'Could not create token'], 500);
         }
     }
-    
+
     // Get authenticated user
     public function getUser()
     {

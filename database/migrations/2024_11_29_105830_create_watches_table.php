@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('model');
             $table->string('brand');
             $table->string('ean');
-            $table->foreignId('type_id')->constrained('types');
+            $table->foreignId('type_id')->constrained('Types');
             $table->foreignId('strap_id')->constrained('straps');
             $table->year('year_edition');
             $table->float('price');

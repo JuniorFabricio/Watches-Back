@@ -23,4 +23,3 @@ Route::middleware([JwtMiddleware::class])->group(function () {
     Route::delete('/watch/{id}', [WatchController::class, 'delete']);
     Route::put('/watch/{id}', [WatchController::class, 'update']);
 });
-

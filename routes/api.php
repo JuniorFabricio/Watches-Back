@@ -20,6 +20,6 @@ Route::middleware([JwtMiddleware::class])->group(function () {
     Route::get('/watches/{price}', [WatchController::class, 'getWatchByPrice']);
     Route::get('/watch/{id}', [WatchController::class, 'get']);
     Route::post('/watch', [WatchController::class, 'create']);
-    Route::delete('/watch/{id}', [WatchController::class, 'delete']);
+    Route::delete('/watchdelete/{id}', [WatchController::class, 'delete']);
     Route::put('/watch/{id}', [WatchController::class, 'update']);
 });
